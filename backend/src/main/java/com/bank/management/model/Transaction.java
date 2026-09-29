@@ -14,8 +14,31 @@ public class Transaction {
     private String receiverCustomerId;
     private String description;
     private LocalDateTime timestamp;
+    /*
+     * ACTIVE
+     * EDITED
+     */
+    private String status;
+    /*
+     * Manager username who edited this transaction.
+     *
+     * Example:
+     * manager
+     */
+    private String updatedBy;
+    /*
+     * If this transaction was replaced,
+     * this contains the new transaction ID.
+     */
+    private String supersededBy;
+    // =========================================================
+    // CONSTRUCTOR
+    // =========================================================
     public Transaction() {
     }
+    // =========================================================
+    // GETTERS AND SETTERS
+    // =========================================================
     public String getId() {
         return id;
     }
@@ -69,5 +92,23 @@ public class Transaction {
     }
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+    public String getSupersededBy() {
+        return supersededBy;
+    }
+    public void setSupersededBy(String supersededBy) {
+        this.supersededBy = supersededBy;
     }
 }

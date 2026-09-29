@@ -1,5 +1,8 @@
 package com.bank.management.repository;
 import com.bank.management.model.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;
-public interface EmployeeRepository extends MongoRepository<Employee, String> {
+import java.util.Optional;
+public interface EmployeeRepository
+        extends MongoRepository<Employee, String> {
+    Optional<Employee> findByEmployeeCode(String employeeCode);
 }
